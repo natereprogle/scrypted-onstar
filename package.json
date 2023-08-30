@@ -29,6 +29,7 @@
          "Settings"
       ]
    },
+   "homepage": "https://github.com/natereprogle/scrypted-onstar",
    "dependencies": {
       "axios": "^0.24.0",
       "onstarjs": "^2.3.25",
