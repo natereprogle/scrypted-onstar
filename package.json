@@ -1,0 +1,52 @@
+{
+   "name": "@scrypted/onstar",
+   "description": "A scrypted plugin to allow control over your OnStar enabled vehicles",
+   "version": "0.0.1",
+   "author": {
+      "name": "Nate Reprogle",
+      "url": "https://reprogle.org"
+   },
+   "scripts": {
+      "scrypted-setup-project": "scrypted-setup-project",
+      "prescrypted-setup-project": "scrypted-package-json",
+      "build": "scrypted-webpack",
+      "prepublishOnly": "SET NODE_ENV=production; scrypted-webpack",
+      "prescrypted-vscode-launch": "scrypted-webpack",
+      "scrypted-vscode-launch": "scrypted-deploy-debug",
+      "scrypted-deploy-debug": "scrypted-deploy-debug",
+      "scrypted-debug": "scrypted-debug",
+      "scrypted-deploy": "scrypted-deploy",
+      "scrypted-readme": "scrypted-readme",
+      "scrypted-package-json": "scrypted-package-json"
+   },
+   "scrypted": {
+      "name": "OnStar",
+      "type": "DeviceProvider",
+      "interfaces": [
+         "OnOff",
+         "DeviceProvider",
+         "Lock",
+         "Settings"
+      ]
+   },
+   "dependencies": {
+      "axios": "^0.24.0",
+      "onstarjs": "^2.3.25",
+      "uuid": "^9.0.0"
+   },
+   "devDependencies": {
+      "@scrypted/sdk": "^0.2.49",
+      "@types/node": "^18.15.8"
+   },
+   "keywords": [
+      "scrypted",
+      "plugin",
+      "onstar",
+      "chevrolet",
+      "chevy",
+      "gm",
+      "gmc",
+      "buick",
+      "cadillac"
+   ]
+}
