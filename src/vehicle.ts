@@ -14,7 +14,10 @@ class OnStarVehicle extends ScryptedDeviceBase implements OnOff, Lock {
 
   async lock(): Promise<void> {
     await this.connection.lockDoor();
+
     this.lockState = LockState.Locked;
+    clearTimeout(this.lockTimeout);
+
     this.console.log("Locking vehicle " + this.nativeId);
   }
 
@@ -22,6 +25,9 @@ class OnStarVehicle extends ScryptedDeviceBase implements OnOff, Lock {
     await this.connection.unlockDoor();
     this.lockState = LockState.Unlocked;
     this.console.log("Unlocking vehicle " + this.nativeId);
+
+    // Automatically send the lock command after 5 minutes
+    // Unfortunately, there isn't a known way to poll current lock status, so this is what we got. Will be configurable later.
     this.lockTimeout = setTimeout(async () => {
       await this.lock();
       this.console.log(
@@ -29,7 +35,7 @@ class OnStarVehicle extends ScryptedDeviceBase implements OnOff, Lock {
           this.nativeId +
           " wasn't locked using HomeKit, automatically locking to prevent invalid state"
       );
-    });
+    }, 1000 * 5 * 60);
   }
 
   async turnOn(): Promise<void> {
