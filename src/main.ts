@@ -1,6 +1,3 @@
-// https://developer.scrypted.app/#getting-started
-// package.json contains the metadata (name, interfaces) about this device
-// under the "scrypted" key.
 import sdk, {
   Device,
   DeviceProvider,
@@ -130,6 +127,15 @@ class OnStarPlugin
       ).vehicles.vehicle;
 
       for (let vehicle of tempVehicles) {
+        this.console.log(
+          "Discovered a new vehicle: " +
+            vehicle.year +
+            " " +
+            vehicle.make +
+            " " +
+            vehicle.model +
+            ". Creating devices"
+        );
         onstarVehicles.push({
           nativeId: vehicle.vin + "-remote-lock",
           name: vehicle.nickname + " Remote Lock",
@@ -164,7 +170,7 @@ class OnStarPlugin
       });
     } catch (e) {
       this.console.error(
-        "Failure to get account vehicles. Have you configured the OnStar plugin yet?"
+        "Failure to get account vehicles. Have you configured the OnStar plugin yet? Please enter credentials and reload plugin."
       );
     }
   }
