@@ -1,26 +1,13 @@
-import sdk, {
-  EventDetails,
-  Lock,
-  LockState,
-  OnOff,
-  ScryptedDevice,
-  ScryptedDeviceBase,
-  ScryptedInterface,
-} from "@scrypted/sdk";
+import { Lock, LockState, OnOff, ScryptedDeviceBase } from "@scrypted/sdk";
 import OnStar from "onstarjs";
-
-const { systemManager } = sdk;
 
 class OnStarVehicle extends ScryptedDeviceBase implements OnOff, Lock {
   vehicle: OnStar;
-  vehicleObject: ScryptedDevice;
 
   constructor(nativeId?: string, private connection?: OnStar) {
     super(nativeId);
     this.lockState = LockState.Locked || LockState.Unlocked;
     this.on = false || this.on;
-
-    this.vehicleObject = systemManager.getDeviceById(nativeId);
   }
 
   async lock(): Promise<void> {
