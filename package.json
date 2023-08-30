@@ -1,7 +1,7 @@
 {
    "name": "@natereprogle/onstar",
    "description": "A scrypted plugin to allow control over your OnStar enabled vehicles",
-   "version": "0.0.6",
+   "version": "0.0.7",
    "author": {
       "name": "Nate Reprogle",
       "url": "https://reprogle.org"
@@ -10,7 +10,7 @@
       "scrypted-setup-project": "scrypted-setup-project",
       "prescrypted-setup-project": "scrypted-package-json",
       "build": "scrypted-webpack",
-      "prepublishOnly": "SET NODE_ENV=production; scrypted-webpack",
+      "prepublishOnly": "env-cmd -f ./.prodenv scrypted-webpack",
       "prescrypted-vscode-launch": "scrypted-webpack",
       "scrypted-vscode-launch": "scrypted-deploy-debug",
       "scrypted-deploy-debug": "scrypted-deploy-debug",
@@ -37,7 +37,8 @@
    },
    "devDependencies": {
       "@scrypted/sdk": "^0.2.49",
-      "@types/node": "^18.15.8"
+      "@types/node": "^18.15.8",
+      "env-cmd": "^10.1.0"
    },
    "keywords": [
       "scrypted",
