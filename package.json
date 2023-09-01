@@ -1,7 +1,7 @@
 {
    "name": "@natereprogle/onstar",
    "description": "A scrypted plugin to allow control over your OnStar enabled vehicles",
-   "version": "0.0.8",
+   "version": "0.0.9",
    "author": {
       "name": "Nate Reprogle",
       "url": "https://reprogle.org"
@@ -23,9 +23,7 @@
       "name": "OnStar",
       "type": "DeviceProvider",
       "interfaces": [
-         "OnOff",
          "DeviceProvider",
-         "Lock",
          "Settings"
       ]
    },

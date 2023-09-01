@@ -163,6 +163,34 @@ class OnStarPlugin
             firmware: vehicle.year,
           },
         });
+
+        onstarVehicles.push({
+          nativeId: vehicle.vin + "-horn",
+          name: vehicle.nickname + " Horn",
+          type: ScryptedDeviceType.Switch,
+          interfaces: [ScryptedInterface.OnOff],
+          info: {
+            model: vehicle.model,
+            manufacturer: vehicle.make,
+            serialNumber: vehicle.vin,
+            version: vehicle.year,
+            firmware: vehicle.year,
+          },
+        });
+
+        onstarVehicles.push({
+          nativeId: vehicle.vin + "-lights",
+          name: vehicle.nickname + " Lights",
+          type: ScryptedDeviceType.Light,
+          interfaces: [ScryptedInterface.OnOff],
+          info: {
+            model: vehicle.model,
+            manufacturer: vehicle.make,
+            serialNumber: vehicle.vin,
+            version: vehicle.year,
+            firmware: vehicle.year,
+          },
+        });
       }
 
       await sdk.deviceManager.onDevicesChanged({
