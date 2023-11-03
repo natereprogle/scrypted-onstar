@@ -5,7 +5,7 @@
         ":dependencyDashboard"
     ],
     "baseBranches": [
-        "master"
+        "main"
     ],
     "lockFileMaintenance": {
         "enabled": true,
