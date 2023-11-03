@@ -6,6 +6,7 @@ name: NPM Package
 on:
   pull_request:
     types: [closed]
+    branches: [main]
 
 jobs:
   increment-version:
@@ -19,6 +20,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           minor-wording: "update"
+          target-branch: "main"
 
   publish-npm:
     needs: increment-version
