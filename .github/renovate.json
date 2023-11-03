@@ -1,0 +1,30 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        ":dependencyDashboard"
+    ],
+    "baseBranches": [
+        "master"
+    ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": true,
+        "automergeType": "pr",
+        "platformAutomerge": true
+    },
+    "packageRules": [
+        {
+            "matchUpdateTypes": [
+                "minor",
+                "patch",
+                "rollback",
+                "bump",
+                "replacement"
+            ],
+            "automerge": true
+        }
+    ],
+    "platformCommit": true,
+    "dependencyDashboardAutoclose": true
+}
