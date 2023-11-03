@@ -1,4 +1,4 @@
-# Scrypted OnStar
+# Scrypted OnStar [![NPM Package](https://github.com/natereprogle/scrypted-onstar/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/natereprogle/scrypted-onstar/actions/workflows/npm-publish.yml)
 
 A Scrypted plugin to control OnStar enabled vehicles.
 
