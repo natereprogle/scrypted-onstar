@@ -22,7 +22,23 @@
                 "bump",
                 "replacement"
             ],
-            "automerge": true
+            "matchPackageNames": [
+                "onstar"
+            ],
+            "automerge": true,
+            "automergeComment": "update: update OnStarJS"
+        },
+        {
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch",
+                "rollback",
+                "bump",
+                "pin",
+                "replacement"
+            ],
+            "automerge": false
         }
     ],
     "commitMessagePrefix": "update",
