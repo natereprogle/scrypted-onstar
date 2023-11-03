@@ -1,7 +1,7 @@
 {
    "name": "@natereprogle/onstar",
    "description": "A scrypted plugin to allow control over your OnStar enabled vehicles",
-   "version": "0.0.10",
+   "version": "0.0.11",
    "author": {
       "name": "Nate Reprogle",
       "url": "https://reprogle.org"
@@ -29,13 +29,13 @@
    },
    "homepage": "https://github.com/natereprogle/scrypted-onstar",
    "dependencies": {
-      "axios": "^1.5.0",
-      "onstarjs": "^2.3.26",
+      "axios": "^1.6.0",
+      "onstarjs": "^2.3.28",
       "uuid": "^9.0.1"
    },
    "devDependencies": {
-      "@scrypted/sdk": "^0.2.104",
-      "@types/node": "^20.6.3",
+      "@scrypted/sdk": "^0.2.105",
+      "@types/node": "^20.8.10",
       "env-cmd": "^10.1.0"
    },
    "keywords": [
