@@ -25,6 +25,7 @@
             "automerge": true
         }
     ],
+    "commitMessagePrefix": "update",
     "platformCommit": true,
     "dependencyDashboardAutoclose": true
 }
