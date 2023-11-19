@@ -23,7 +23,7 @@
                 "replacement"
             ],
             "matchPackageNames": [
-                "onstar"
+                "onstarjs"
             ],
             "automerge": true,
             "automergeComment": "update: update OnStarJS"
