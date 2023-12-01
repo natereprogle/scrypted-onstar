@@ -34,7 +34,7 @@
       "uuid": "^9.0.1"
    },
    "devDependencies": {
-      "@scrypted/sdk": "^0.2.105",
+      "@scrypted/sdk": "^0.3.0",
       "@types/node": "^20.8.10",
       "env-cmd": "^10.1.0"
    },
