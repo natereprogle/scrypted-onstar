@@ -29,7 +29,7 @@
    },
    "homepage": "https://github.com/natereprogle/scrypted-onstar",
    "dependencies": {
-      "onstarjs": "^2.3.29",
+      "onstarjs": "^2.3.30",
       "uuid": "^9.0.1"
    },
    "devDependencies": {
