@@ -11,7 +11,7 @@ on:
 
 jobs:
   increment-version:
-    if: github.event.pull_request.merged == true || github.event.workflow_dispatch == true
+    if: github.event.pull_request.merged == true || github.event.workflow_dispatch.sender != null
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
