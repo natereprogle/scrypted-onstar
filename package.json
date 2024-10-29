@@ -34,7 +34,7 @@
    },
    "devDependencies": {
       "@scrypted/sdk": "^0.3.0",
-      "@types/node": "^20.10.4",
+      "@types/node": "^22.0.0",
       "env-cmd": "^10.1.0"
    },
    "keywords": [
