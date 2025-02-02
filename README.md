@@ -1,24 +1,26 @@
 # Scrypted OnStar [![NPM Package](https://github.com/natereprogle/scrypted-onstar/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/natereprogle/scrypted-onstar/actions/workflows/npm-publish.yml)
+
 Auth issues? [Read this](https://github.com/natereprogle/scrypted-onstar/issues/8)!
 
 A Scrypted plugin to control OnStar enabled vehicles.
 
 This plugin was tested using a `2024 Chevrolet Trax 1RS`. Other vehicle features may vary.
 
-I recommend, if possible, creating a secondary OnStar account and connecting this plugin to it. You can share vehicles with these second OnStar accounts, and it protects your main account as well.
+I recommend, if possible, creating a secondary OnStar account and connecting this plugin to it. You can share vehicles with these second OnStar accounts, and it, in theory, will protect your main account as well.
 
-This plugin uses an **UNOFFICIAL** API, [OnStarJS](https://github.com/samrum/OnStarJS). OnStar refuses to provide developers with a publicly available API. They claim to have commercial development APIs available, but also refuse to respond to development requests. Therefore, the community has had to resort to workarounds and reverse engineering the OnStar API. **USE THIS AT YOUR OWN RISK**.
+This plugin uses an **UNOFFICIAL** API, [OnStarJS2](https://github.com/BigThunderSR/OnStarJS). OnStar refuses to provide developers with a publicly available API. They claim to have commercial development APIs available, but also refuse to respond to development requests. Therefore, the community has had to resort to workarounds and reverse engineering the OnStar API. **USE THIS AT YOUR OWN RISK**.
 
 **<u>Help Wanted</u>**! If you know how to make this plugin better, or want to contribute, please submit a pull request 😄
 
 ## Usage
 
-Once installed, you will need four things:
+Once installed, you will need five things:
 
 1. The VIN of primary vehicle
 2. Your OnStar Username
 3. Your OnStar Password
 4. Your OnStar Account PIN
+5. **NEW** Your OnStar TOTP Secret
 
 Enter those items in the settings pane of the @natereprogle/onstar plugin, and save. Then, reload the plugin. Your vehicles should appear momentarily. You may also add them to the HomeKit plugin for control of them via Siri, Shortcuts, or other automations. And, in iOS 17, since widgets are interactable, this means you can finally use a widget (Home or Shortcuts) to start your vehicle instead of having to open the official app for your vehicle. See the below screenshot as an example! (Ignore the updating outlets 😜)
 

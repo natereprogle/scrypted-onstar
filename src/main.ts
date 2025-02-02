@@ -11,8 +11,8 @@ import sdk, {
 
 import { v4 as uuidv4 } from "uuid";
 import OnStarVehicle from "./vehicle";
-import OnStar from "onstarjs";
-import { OnStarConfig } from "onstarjs/dist/types";
+import { OnStarConfig } from "onstarjs2/dist/types";
+import OnStar from "onstarjs2";
 
 class OnStarPlugin
   extends ScryptedDeviceBase
@@ -42,6 +42,10 @@ class OnStarPlugin
 
   getPin() {
     return this.storage.getItem("pin");
+  }
+
+  getTotp() {
+    return this.storage.getItem("totp");
   }
 
   getDeviceId() {
@@ -78,29 +82,35 @@ class OnStarPlugin
         description:
           "Your OnStar account PIN. Forgot it? Reset it at your vehicle manufacturer's website under account settings",
       },
+      {
+        key: "totp",
+        title: "OnStar TOTP Secret",
+        value: this.getTotp(),
+        type: "password",
+        description:
+          "The TOTP secret for your OnStar account. This is necessary due to a change in OnStar's authentication method in November 2024. You can get this by logging on to onstar.com (on desktop, not mobile) and switching your security method from email/sms to Third-Party Authenticator App",
+      },
     ];
   }
 
   async putSetting(key: string, value: SettingValue): Promise<void> {
     this.storage.setItem(key, value.toString());
 
-    this.onDeviceEvent(ScryptedInterface.Settings, undefined);
+    await this.onDeviceEvent(ScryptedInterface.Settings, undefined);
   }
 
   async getDevice(nativeId: string): Promise<any> {
-    return new OnStarVehicle(
-      nativeId,
-      await OnStar.create(this.createConnection(nativeId))
-    );
+    return new OnStarVehicle(nativeId, OnStar.create(this.createConnection()));
   }
 
-  createConnection(nativeId): OnStarConfig {
+  createConnection(): OnStarConfig {
     return {
       deviceId: this.deviceId,
-      vin: nativeId,
+      vin: this.getVIN(),
       username: this.getUsername(),
       password: this.getPassword(),
       onStarPin: this.getPin(),
+      onStarTOTP: this.getTotp(),
     };
   }
 
@@ -118,9 +128,10 @@ class OnStarPlugin
         username: this.getUsername(),
         password: this.getPassword(),
         onStarPin: this.getPin(),
+        onStarTOTP: this.getTotp(),
       };
 
-      this.connection = await OnStar.create(onStarSettings);
+      this.connection = OnStar.create(onStarSettings);
 
       let tempVehicles: any[] = (
         (await this.connection.getAccountVehicles()).response.data as any
