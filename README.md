@@ -20,12 +20,14 @@ Once installed, you will need five things:
 2. Your OnStar Username
 3. Your OnStar Password
 4. Your OnStar Account PIN
-5. **NEW** Your OnStar TOTP Secret
+5. **NEW**<sup>[1]</sup> Your OnStar TOTP Secret
 
-Enter those items in the settings pane of the @natereprogle/onstar plugin, and save. Then, reload the plugin. Your vehicles should appear momentarily. You may also add them to the HomeKit plugin for control of them via Siri, Shortcuts, or other automations. And, in iOS 17, since widgets are interactable, this means you can finally use a widget (Home or Shortcuts) to start your vehicle instead of having to open the official app for your vehicle. See the below screenshot as an example! (Ignore the updating outlets 😜)
+Enter those items in the settings pane of the @natereprogle/onstar plugin, and save. Then, reload the plugin. Your vehicles should appear momentarily. You may also add them to the HomeKit plugin for control of them via Siri, Shortcuts, or other automations. And, in iOS 17, since widgets are interactable, this means you can finally use a widget (Home or Shortcuts) to start your vehicle instead of having to open the official app for your vehicle. See the below screenshot as an example!
+
+<sup>[1] Around November 2024 sometime, GM started requiring TOTP for signing in. The workaround for this is to provide the TOTP Secret itself so OnStarJS2 can generate the TOTP and handle the auth. If you are uncomfortable with this, then using anything other than the official application is likely not for you. The source, as always, is available on GitHub</sup>
 
 <div align="center">
-    <img src="https://github.com/natereprogle/scrypted-onstar/blob/5cd970082449123baac1bd1a9ce180ce4e8d4310/assets/HomeKit.PNG?raw=true" alt="Screenshot of HomeKit app showing vehicle controls" width="50%" height="50%">
+    <img src="https://raw.githubusercontent.com/natereprogle/scrypted-onstar/refs/heads/main/assets/HomeKit.PNG" alt="Screenshot of HomeKit app showing vehicle controls" width="50%" height="50%">
 </div>
 
 ## Current Features
@@ -33,7 +35,7 @@ Enter those items in the settings pane of the @natereprogle/onstar plugin, and s
 1. Remote Lock / Unlock
 2. Remote Start
 3. Activate Horn / Lights
-4. Model, Manufacturer, Serial Number, and Firmware Version in the HomeKit device settings all match your vehicle information. Serial Number maps to VIN, and Firmware Version maps to vehicle year. Feel free to brag about your firmware version being 2024.0, if you so choose 😎
+4. Model, Manufacturer, Serial Number, and Firmware Version in the HomeKit device settings all match your vehicle information. Serial Number maps to VIN, and Firmware Version maps to vehicle year.
 
 ## Planned Features
 
@@ -45,7 +47,7 @@ Enter those items in the settings pane of the @natereprogle/onstar plugin, and s
 As it is currently not possible to query a vehicle's status (See "Current Limitations" below), the plugin will do two things automatically
 
 1. The doors will automatically lock after 5 minutes, if not locked from HomeKit. The same applies to the horn and lights, if they are on.
-2. The engine switch will automatically be flipped to off after 15 minutes (On my car, the timeout is 15 minutes. Not sure if this is the same for EVs or other GM vehicles). I am tempted to make this flip back to off automatically once the vehicle is running, that way you, as the driver, are aware your vehicle started, but for now it's just a 15 minute timeout, just like the myChevy app.
+2. The engine switch will automatically be flipped to off after 15 minutes (On my car, the timeout is 15 minutes. Not sure if this is the same for EVs or other GM vehicles). I am tempted to make this flip back to off automatically once the vehicle is running, that way you, as the driver, are aware your vehicle started, but for now it's just a 15 minute timeout, just like the myChevy app. I'm also not sure if this is possible in the first place.
 
 ## Current Limitations
 
