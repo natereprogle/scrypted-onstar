@@ -23,10 +23,10 @@
                 "replacement"
             ],
             "matchPackageNames": [
-                "onstarjs"
+                "onstarjs2"
             ],
             "automerge": true,
-            "automergeComment": "update: update OnStarJS"
+            "automergeComment": "update: update OnStarJS2"
         },
         {
             "matchUpdateTypes": [
@@ -42,6 +42,6 @@
         }
     ],
     "commitMessagePrefix": "update",
-    "platformCommit": true,
+    "platformCommit": "enabled",
     "dependencyDashboardAutoclose": true
 }
