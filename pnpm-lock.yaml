@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@scrypted/sdk':
-        specifier: ^0.3.109
-        version: 0.3.109(@babel/core@7.26.7)
+        specifier: ^0.5.0
+        version: 0.5.3(@babel/core@7.26.7)
       onstarjs2:
         specifier: ^2.6.1
         version: 2.6.1(rollup@4.34.0)
@@ -344,8 +344,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@scrypted/sdk@0.3.109':
-    resolution: {integrity: sha512-FC3koTmC5UkcuBkGSLDtStDjPA3liWwCUdt/SUtt5dGyZgLCRjkt2XDR68xYmhEYKYL+fxMmM8ysTJHfm/XyeA==}
+  '@scrypted/sdk@0.5.3':
+    resolution: {integrity: sha512-QMso24IM1xm8ScUfcoZFqJ25GLU2xoKgEFpLPcnHC0OIAy7xWJSe8iNNmgYdav1WnIxmBJviE3WVgO2cxF4hTA==}
     hasBin: true
 
   '@types/eslint-scope@3.7.7':
@@ -1546,7 +1546,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.34.0':
     optional: true
 
-  '@scrypted/sdk@0.3.109(@babel/core@7.26.7)':
+  '@scrypted/sdk@0.5.3(@babel/core@7.26.7)':
     dependencies:
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.7)
       '@rollup/plugin-commonjs': 28.0.2(rollup@4.34.0)
