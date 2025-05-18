@@ -32,9 +32,9 @@ jobs:
           ref: main
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: pnpm install
+      - run: npm ci
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
