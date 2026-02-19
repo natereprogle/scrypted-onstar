@@ -1,3 +1,10 @@
+# Archived as of 2026-02-19
+This project has been archived as of 2026 February 19. I have not maintained this package in quite some time, and OnStar is already a very difficult API to reverse engineer. This package, itself, makes use of an unofficial JS library that implements the OnStar API, which itself was able to do based on reverse engineering efforts from the community. Authentication is finicky, the plugin wasn't written well to begin with, and I also never really used it.
+
+I simply do not have time to maintain this nor do I want to, if I'm being honest. If anyone would like to take up the mantle, feel free! There are already OnStar Add-Ons for Home Assistance (Which I recommend) and HomeBridge, this plugin just allowed users using Scrypted to control their vehicles _there_. But, since Scrypted can be run inside Home Assistant, thre is no reason this plugin needs to exist. Therefore, I'm considering it obsolete and unnecessary, hence the archival. 
+
+Feel free to fork it if you want to continue with development! :)
+
 # Scrypted OnStar [![NPM Package](https://github.com/natereprogle/scrypted-onstar/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/natereprogle/scrypted-onstar/actions/workflows/npm-publish.yml)
 
 Auth issues? [Read this](https://github.com/natereprogle/scrypted-onstar/issues/8)!
